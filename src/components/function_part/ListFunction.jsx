@@ -5,8 +5,11 @@ class ListFunction extends React.Component {
     render(){
         return(
             <div className='list-gap'>
-                {this.props.texts.map((text, index) => (
-                    <p key={index}>{text}</p>
+                {this.props.texts?.map((text, index) => (
+                    <p key={index} style={{fontSize: '20px'}}>
+                        {text}
+                        <hr/>
+                    </p>
                 ))}
             </div>
         )

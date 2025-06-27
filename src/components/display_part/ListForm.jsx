@@ -8,41 +8,49 @@ class ListForm extends React.Component {
         texts: [],
         showInput: false,
         curruntText: '',
-    };
+    }
     addInput = () => {
         this.setState({
             showInput: true,
         });
     };
     saveInput = () => {
-        if(this.state.curruntText.trim()){
-            this.setState(prevState => ({
+        if (this.state.curruntText.trim()) {
+            this.setState((prevState) => ({
                 texts: [...prevState.texts, prevState.curruntText],
-                curruntText: '',
                 showInput: false,
+                curruntText: '',
             }));
         }
-    };
-    changeInput = (e) => {
+    }
+    changeInput = (event) => {
         this.setState({
-            curruntText: e.target.value,
+            curruntText: event.target.value,
         });
-    };
+    }
+    cancelInput = () => {
+        this.setState({
+            showInput: false,
+            curruntText: '',
+        });
+    }
+
     render() {
         return (
             <form>
                 <AddFunction onClick={this.addInput}/>
 
-                {this.state.showInput && (
-                    <InputFunction
-                        value={this.state.curruntText}
-                        onChange={this.changeInput}
-                        onSave={this.saveInput}
-                    />
-                )}
-                
                 <div className='list-container'>
-                    <div className='list' style={{overflowY: 'scroll', border: '1px solid #ccc'}}>
+                    {this.state.showInput && (
+                        <InputFunction
+                            value={this.state.curruntText}
+                            onChange={this.changeInput}
+                            onSave={this.saveInput}
+                            onCancel={this.cancelInput}
+                        />
+                    )}
+
+                    <div className='list custom-scrollbar'>
                         <ListFunction texts={this.state.texts}/>
                     </div>
                 </div>
