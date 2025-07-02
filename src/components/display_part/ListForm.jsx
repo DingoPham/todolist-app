@@ -9,6 +9,10 @@ class ListForm extends React.Component {
         showInput: false,
         curruntText: '',
     }
+    constEnterKey = (event) => {
+        if (event.key === 'Enter' && this.state.showInput) {
+        }
+    };
     addInput = () => {
         this.setState({
             showInput: true,

@@ -31,11 +31,11 @@ form{
 }
 .add-button {
     cursor: pointer;
-    width: 100px;
+    width: 50px;
     height: 50px;
     color: white;
-    background-color: #4d4d4d;
-    border-radius:4px;
+    background-color: #d6d6d6;
+    border-radius:50%;
 }
 .add-button-2{
     cursor: pointer;
@@ -44,7 +44,7 @@ form{
     color: white;
     background-color: #4d4d4d;
     border-radius:4px;
-    margin: 0 10px 0 0;
+    margin: 0 10px 0 10px;
 }
 .task-input {
     width: 300px;
@@ -56,4 +56,10 @@ form{
 }
 .list-gap{
     margin: 20px;
+}
+.icon-plus{
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    display: inline-block;
 }
