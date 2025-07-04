@@ -1,6 +1,6 @@
-import ListForm from './components/display_part/ListForm';
 import Title from './components/display_part/Title';
 import TodoTable from './components/display_part/TodoTable';
+import ListFunction from './components/function_part/ListFunction';
 
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <div className="App">
       <TodoTable>
         <Title />
-        <ListForm />
+        <ListFunction />
       </TodoTable>
     </div>
   );

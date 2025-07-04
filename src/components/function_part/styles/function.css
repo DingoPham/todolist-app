@@ -1,4 +1,4 @@
-form{
+.form{
     margin: 10px;
     color: white;
     background-color: rgb(63, 63, 63);
@@ -62,4 +62,17 @@ form{
     height: 30px;
     background-size: cover;
     display: inline-block;
+}
+
+.input-display{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.text-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
 }
