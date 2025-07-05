@@ -4,13 +4,13 @@ class InputFunction extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            inputValue: props.editingList ? props.editingList.text : ' ',
+            inputValue: props.editingList ? props.editingList.text : '',
         }
     }
     componentDidUpdate = (prevProps) =>{
-        if (this.props.editingList.text !== prevProps.editingList.text) {
+        if (this.props.editingList?.text !== prevProps.editingList?.text) {
             this.setState({
-                inputValue: this.props.editingList.text
+                inputValue: this.props.editingList?.text
             })
         }
     }
@@ -40,15 +40,8 @@ class InputFunction extends React.Component {
             this.props.hideInput();
         }
     }
-    resetInput = () => {
-        this.setState({
-            inputValue: ''
-        })
-        this.props.hideInput()
-    }
     handleCancelInput = () => {
-        console.log("click")
-        this.resetInput();
+        this.props.hideInput()
     }
     render(){
         return( 

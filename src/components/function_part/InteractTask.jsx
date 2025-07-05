@@ -6,9 +6,9 @@ class InteractTask extends React.Component{
             <>
                 {this.props.lists.map(list => (
                     <div className="text-list" key={list.id}>
-                        <p style={{margin: "0", wordWrap: "break-word", width: "70%"}}>{list.text}
+                        <div style={{margin: "0", wordWrap: "break-word", width: "70%"}}>{list.text}
                             <hr />
-                        </p>
+                        </div>
                         
                         <div>
                             <button 
