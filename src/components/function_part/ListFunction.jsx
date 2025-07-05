@@ -61,7 +61,7 @@ class ListFunction extends React.Component {
         });
     }
 
-    // Ẩn input khi 
+    // Ẩn input khi ấn cancel
     hideInput = () => {
         this.setState({
             showInput: false,

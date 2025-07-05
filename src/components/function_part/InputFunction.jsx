@@ -4,7 +4,14 @@ class InputFunction extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            inputValue: props.editingList ? props.editingList.text : ' '
+            inputValue: props.editingList ? props.editingList.text : ' ',
+        }
+    }
+    componentDidUpdate = (prevProps) =>{
+        if (this.props.editingList.text !== prevProps.editingList.text) {
+            this.setState({
+                inputValue: this.props.editingList.text
+            })
         }
     }
     handleChange = (e) => {
@@ -33,22 +40,36 @@ class InputFunction extends React.Component {
             this.props.hideInput();
         }
     }
+    resetInput = () => {
+        this.setState({
+            inputValue: ''
+        })
+        this.props.hideInput()
+    }
+    handleCancelInput = () => {
+        console.log("click")
+        this.resetInput();
+    }
     render(){
         return( 
-            <form className="input-display" onClick={this.handleSubmit}>
+            <form className="input-display" onSubmit={this.handleSubmit}>
                 <input
                     onKeyPress={this.handleKeyDown}
                     value={this.state.inputValue}
-                    onChange={this.handleChange}
+                    onChange={this.handleChange }
                     className="task-input"
                     type="text"
                     placeholder="Type your task here..."
                     autoFocus
                 />
-                <button type="button" className="add-button-2" >
+                
+                <button type="submit" className="add-button-2" >
                     Save
                 </button>
-                <button type="button" className="add-button-2" onClick={this.props.hideInput}>
+                <button type="button" 
+                        className="add-button-2"    
+                        onClick={this.handleCancelInput}
+                >
                     Cancel
                 </button>
             </form>
